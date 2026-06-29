@@ -95,7 +95,7 @@ section{padding:40px 0}
 
 /* how — horizontal scroll-snap strip with gradient progression */
 .how h2{font-family:"Clash Display";font-weight:600;font-size:clamp(26px,3.4vw,40px);text-align:center;margin-bottom:28px}
-.hscroll{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 18px;-webkit-overflow-scrolling:touch}
+.hscroll{display:flex;justify-content:center;align-items:stretch;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 18px;-webkit-overflow-scrolling:touch}
 .hscroll::-webkit-scrollbar{height:6px}.hscroll::-webkit-scrollbar-thumb{background:var(--line2);border-radius:6px}
 .hcard{flex:0 0 min(340px,80vw);scroll-snap-align:start;border-radius:20px;padding:30px 26px;position:relative;overflow:hidden;border:1px solid var(--line2)}
 .hcard .hc-n{position:absolute;top:16px;right:20px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;opacity:.5}
@@ -105,6 +105,7 @@ section{padding:40px 0}
 .hc-a{background:linear-gradient(145deg,rgba(255,61,127,.14),rgba(255,61,127,.03));border-color:rgba(255,61,127,.3)}.hc-a .hc-ic{color:var(--a2)}
 .hc-b{background:linear-gradient(145deg,rgba(255,212,94,.12),rgba(255,212,94,.03));border-color:rgba(255,212,94,.25)}.hc-b .hc-ic{color:var(--gold)}
 .hc-c{background:linear-gradient(145deg,rgba(61,240,255,.12),rgba(61,240,255,.03));border-color:rgba(61,240,255,.25)}.hc-c .hc-ic{color:var(--b2)}
+@media(max-width:1120px){.hscroll{justify-content:flex-start;padding-left:max(0px,calc((100vw - 340px)/2 - 28px));padding-right:max(0px,calc((100vw - 340px)/2 - 28px))}}
 
 /* drawer */
 .scrim{position:fixed;inset:0;background:rgba(5,3,8,.72);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .4s;z-index:70}
