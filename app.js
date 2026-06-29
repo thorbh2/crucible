@@ -58,7 +58,7 @@ function render() {
         <span class="pill ${pill[0]}">${pill[1]}</span>
         <div class="mono" style="font-size:11px;color:var(--gold);margin-top:8px">pot ${toGen(pot)} GEN</div>
       </div>
-      <div class="corner against"><div class="lbl">Against ◢</div><div class="who">${st === WAITING ? "open seat" : short(d.opponent)}</div><div class="stk">${st === WAITING ? "—" : toGen(d.stake) + " GEN"}</div></div>`;
+      <div class="corner against"><div class="lbl">Against ◢</div><div class="who">${st === WAITING ? "open seat" : short(d.opponent)}</div><div class="stk">${st === WAITING ? "-" : toGen(d.stake) + " GEN"}</div></div>`;
     el.onclick = () => openDetail(d.id);
     g.appendChild(el);
   });
@@ -73,7 +73,7 @@ function openCreate() {
     <p style="color:var(--txt2);font-size:14.5px">State the motion and argue the FOR side. A challenger must match your stake to enter.</p>
     <label>The motion</label><input id="motion" maxlength="160" placeholder="Resolved: open models win the AI race." />
     <label>Your opening case (you argue FOR)</label><textarea id="caseA" placeholder="Lay out your strongest argument…"></textarea>
-    <label>Your stake (GEN) — opponent must match</label><input id="stake" type="number" min="0" step="0.1" value="2" />
+    <label>Your stake (GEN) - opponent must match</label><input id="stake" type="number" min="0" step="0.1" value="2" />
     <button class="btn pink block" id="createBtn" style="margin-top:18px">Throw the gauntlet <span class="ic">${icon("swords")}</span></button>`;
   $("createBtn").onclick = doCreate; openDrawer();
 }
