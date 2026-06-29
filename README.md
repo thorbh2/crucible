@@ -53,6 +53,11 @@ npm run preview:project -- 02-crucible
 
 Open http://localhost:8080/02-crucible/.
 
+## Live Deployment
+
+- Production: https://crucible-drab.vercel.app
+- Vercel inspect: https://vercel.com/aspros-projects-07dbbeb8/crucible/EWF2RFT6pYTDtjGcN63vKt9ibtWz
+
 ## Release Command
 
 ```powershell
