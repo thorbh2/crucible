@@ -113,7 +113,7 @@ Crucible ships as a static WebGL-styled face-off interface:
 From the private workspace:
 
 ```powershell
-cd C:\Users\aspronim\Desktop\design-skills
+cd <private-workspace-root>
 npm run preview:start
 npm run preview:project -- 02-crucible
 ```
@@ -127,14 +127,14 @@ http://localhost:8080/02-crucible/
 ## Publish / Redeploy
 
 ```powershell
-cd C:\Users\aspronim\Desktop\design-skills
+cd <private-workspace-root>
 npm run publish:project -- -Project 02-crucible -Repo https://github.com/thorbh2/crucible.git
 ```
 
 Vercel production redeploy from the project folder:
 
 ```powershell
-cd C:\Users\aspronim\Desktop\design-skills\projects\02-crucible
+cd <this-repository-folder>
 npx --yes vercel@latest --prod --yes
 ```
 
