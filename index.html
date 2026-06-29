@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crucible — Staked Debate, Judged by AI</title>
+<!-- Structure: SPLIT-SCREEN FACE-OFF. FOR (magenta) vs AGAINST (cyan) across a center seam · Three.js shards clash at the seam · duels as head-to-head fixtures -->
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+<!-- split background -->
+<div class="split-bg"><div class="half-for"></div><div class="half-against"></div><div class="seam"></div></div>
+
+<div class="wrap">
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <i class="ph-bold ph-sword" style="font-size:24px;color:var(--a)"></i>
+        Crucible
+      </div>
+      <div class="nav-links">
+        <a href="#fixtures">Fixtures</a>
+        <a href="#how">How it works</a>
+        <a href="https://docs.genlayer.com/" target="_blank" rel="noopener">GenLayer</a>
+        <span id="walletslot"><button class="btn sm" id="connectBtn">Connect<span class="ic" data-icon="arrowRight"></span></button></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- hero: the face-off -->
+  <section class="faceoff">
+    <div class="side-tag for">◤ FOR</div>
+    <div class="faceoff-center">
+      <div id="arena3d"></div>
+      <span class="eyebrow"><span class="pip"></span> Staked argument · AI jury consensus</span>
+      <h1 class="disp">Two sides.<br>One <span class="seam-word">verdict.</span></h1>
+      <p class="sub">Put GEN on the line and argue a motion head to head. When both cases are filed, a decentralized validator set reads them and must agree who argued better. Winner takes the pot.</p>
+      <div class="hero-cta">
+        <button class="btn pink" id="newDuelBtn">Throw the gauntlet <span class="ic" data-icon="swords"></span></button>
+        <a class="btn ghost" href="#fixtures">See the fixtures</a>
+      </div>
+    </div>
+    <div class="side-tag against">AGAINST ◢</div>
+  </section>
+
+  <section id="fixtures">
+    <div class="fixtures-head">
+      <h2 class="disp">Today's Fixtures</h2>
+      <span class="meta mono" id="arenaMeta">loading…</span>
+      <button class="btn ghost sm" id="refreshBtn">Refresh</button>
+    </div>
+    <div class="fixtures" id="grid"><div class="empty">Scanning the arena…</div></div>
+  </section>
+
+  <section class="arena-band">
+    <figure class="ab-img">
+      <img src="https://picsum.photos/seed/crucible-coliseum/1100/480" alt="The arena where ideas clash" loading="lazy" />
+      <div class="ab-overlay"></div>
+    </figure>
+    <div class="ab-cap">Every argument enters the crucible. Only the strongest leaves.</div>
+  </section>
+
+  <section id="how" class="how">
+    <h2 class="disp">Three moves to a verdict</h2>
+    <div class="hscroll">
+      <div class="hcard hc-a"><span class="hc-n">01</span><i class="ph-bold ph-flag-banner hc-ic"></i><h4 class="disp">Open</h4><p>Argue the FOR side and set the stake. Your challenger must match it to enter the arena.</p></div>
+      <div class="hcard hc-b"><span class="hc-n">02</span><i class="ph-bold ph-handshake hc-ic"></i><h4 class="disp">Accept</h4><p>A challenger matches the stake and argues AGAINST. Both cases lock on-chain, immutable.</p></div>
+      <div class="hcard hc-c"><span class="hc-n">03</span><i class="ph-bold ph-gavel hc-ic"></i><h4 class="disp">Rule</h4><p>Validators read both, must agree who won, and the pot pays out instantly. No appeal.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Crucible · staked debate on GenLayer studionet</span>
+    <span class="links"><a href="https://docs.genlayer.com/" target="_blank" rel="noopener">Docs</a><a href="https://docs.genlayer.com/developers/intelligent-contracts/equivalence-principle" target="_blank" rel="noopener">Equivalence Principle</a><a href="https://studio.genlayer.com/" target="_blank" rel="noopener">Studio</a></span>
+    <span id="contractFoot"></span>
+  </footer>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-h"><h3 class="disp" id="drawerTitle">Open a duel</h3><button class="btn ghost sm" id="closeDrawer">Close</button></div>
+  <div class="drawer-b" id="drawerBody"></div>
+</aside>
+
+<div id="log"></div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
